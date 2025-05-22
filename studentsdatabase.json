@@ -1,0 +1,28 @@
+{
+  "BSCS": {
+    "1": {
+      "A": [
+        {
+          "studentID": "2025310607",
+          "details": {
+            "firstname": "Alice",
+            "lastname": "Anderson"
+          }
+        }
+      ]
+    }
+  },
+  "BSIT": {
+    "3": {
+      "A": [
+        {
+          "studentID": "123123123",
+          "details": {
+            "firstname": "Janmarc",
+            "lastname": "Pulmones"
+          }
+        }
+      ]
+    }
+  }
+}
