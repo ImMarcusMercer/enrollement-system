@@ -14,9 +14,6 @@ def getOption():
     global choice
     return choice
 
-
-
-
 def Main():
     data = load_data()
     # main()
@@ -51,20 +48,11 @@ def Main():
             password = input("Enter password: ").strip()
             signIn(data,email,password)
             
-
-            
-
-        #Apply
-        elif getOption()=="3":
-            pass
-
-        elif getOption() == "4":
+        elif getOption() == "3":
             loading("Exiting Program")
             break
         else:
             print("Invalid Input!")
             continue
-
-
 if __name__ == "__main__":
     Main()

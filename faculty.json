@@ -1,0 +1,38 @@
+{
+    "faculty": [
+        {
+            "facultyID": "F001",
+            "details": {
+                "email": "f.tajones.john@cmu.edu.ph",
+                "password": "faculty123",
+                "firstname": "John",
+                "lastname": "Tajones",
+                "department": "Information Technology"
+            },
+            "assignedSubjects": {
+                "BS Information Technology": {
+                    "1": {
+                        "A": ["ITCC41", "ITCC43", "GEC11", "GEC14", "GEC15", "PE31", "ITCC41A", "ITCC43A", "GEC18", "NSTPR1"],
+                        "B": ["ITCC41", "ITCC43", "GEC11", "GEC14", "GEC15", "PE31", "ITCC41A", "ITCC43A", "GEC18", "NSTPR1"],
+                        "C": ["ITCC41", "ITCC43", "GEC11", "GEC14", "GEC15", "PE31", "ITCC41A", "ITCC43A", "GEC18", "NSTPR1"]
+                    },
+                    "2": {
+                        "A": ["ITCC42", "ITCC44", "GEC13", "GEE16", "PE32", "ITCC44A", "GEC12", "GEC16", "GEC19", "NSTPR2"],
+                        "B": ["ITCC42", "ITCC44", "GEC13", "GEE16", "PE32", "ITCC44A", "GEC12", "GEC16", "GEC19", "NSTPR2"],
+                        "C": ["ITCC42", "ITCC44", "GEC13", "GEE16", "PE32", "ITCC44A", "GEC12", "GEC16", "GEC19", "NSTPR2"]
+                    },
+                    "3": {
+                        "A": ["ITCC45", "ITCC47", "IT51", "IT53", "IT55", "GEC17", "GEE11", "PE33", "ITCC45A", "ITCC47A", "IT51A", "IT53A", "IT55A"],
+                        "B": ["ITCC45", "ITCC47", "IT51", "IT53", "IT55", "GEC17", "GEE11", "PE33", "ITCC45A", "ITCC47A", "IT51A", "IT53A", "IT55A"],
+                        "C": ["ITCC45", "ITCC47", "IT51", "IT53", "IT55", "GEC17", "GEE11", "PE33", "ITCC45A", "ITCC47A", "IT51A", "IT53A", "IT55A"]
+                    },
+                    "4": {
+                        "A": ["ITCC48", "IT52", "IT54", "IT 56", "STAT22", "GEE 15", "PE34", "ITCC48A", "IT52A", "IT 56A", "IT54A"],
+                        "B": ["ITCC48", "IT52", "IT54", "IT 56", "STAT22", "GEE 15", "PE34", "ITCC48A", "IT52A", "IT 56A", "IT54A"],
+                        "C": ["ITCC48", "IT52", "IT54", "IT 56", "STAT22", "GEE 15", "PE34", "ITCC48A", "IT52A", "IT 56A", "IT54A"]
+                    }
+                }
+            }
+        }
+    ]
+}

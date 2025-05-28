@@ -1,0 +1,665 @@
+{
+    "BS Information Technology": {
+        "1": {
+            "A": {
+                "ITCC41": {
+                    "202500102": {
+                        "midterm": 0,
+                        "finals": 0,
+                        "average": 0,
+                        "remarks": "Not yet graded"
+                    },
+                    "202500105": {
+                        "midterm": 1.0,
+                        "finals": 2.75,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC43": {
+                    "202500102": {
+                        "midterm": 1.75,
+                        "finals": 1.25,
+                        "average": 1.5,
+                        "grade_point": 1.5,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC11": {
+                    "202500102": {
+                        "midterm": 2.0,
+                        "finals": 1.25,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC14": {
+                    "202500102": {
+                        "midterm": 1.25,
+                        "finals": 1.25,
+                        "average": 1.2,
+                        "grade_point": 1.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC15": {
+                    "202500102": {
+                        "midterm": 2.75,
+                        "finals": 2.25,
+                        "average": 2.5,
+                        "grade_point": 2.5,
+                        "remarks": "Passed"
+                    }
+                },
+                "PE31": {
+                    "202500102": {
+                        "midterm": 1.25,
+                        "finals": 1.25,
+                        "average": 1.2,
+                        "grade_point": 1.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC41A": {
+                    "202500102": {
+                        "midterm": 2.0,
+                        "finals": 1.25,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC43A": {
+                    "202500102": {
+                        "midterm": 1.0,
+                        "finals": 1.75,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC18": {
+                    "202500102": {
+                        "midterm": 1.0,
+                        "finals": 2.0,
+                        "average": 1.5,
+                        "grade_point": 1.5,
+                        "remarks": "Passed"
+                    }
+                },
+                "NSTPR1": {
+                    "202500102": {
+                        "midterm": 2.75,
+                        "finals": 1.5,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    }
+                }
+            },
+            "B": {
+                "ITCC41": {
+                    "2025010010": {
+                        "midterm": 0,
+                        "finals": 0,
+                        "average": 0,
+                        "remarks": "Not yet graded"
+                    }
+                },
+                "ITCC43": {
+                    "2025010010": {
+                        "midterm": 1.5,
+                        "finals": 1.0,
+                        "average": 1.2,
+                        "grade_point": 1.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC11": {
+                    "2025010010": {
+                        "midterm": 2.75,
+                        "finals": 1.0,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC14": {
+                    "2025010010": {
+                        "midterm": 2.0,
+                        "finals": 2.0,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC15": {
+                    "2025010010": {
+                        "midterm": 2.25,
+                        "finals": 1.0,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    }
+                },
+                "PE31": {
+                    "2025010010": {
+                        "midterm": 1.5,
+                        "finals": 2.5,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC41A": {
+                    "2025010010": {
+                        "midterm": 2.0,
+                        "finals": 2.5,
+                        "average": 2.2,
+                        "grade_point": 2.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC43A": {
+                    "2025010010": {
+                        "midterm": 1.0,
+                        "finals": 1.75,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC18": {
+                    "2025010010": {
+                        "midterm": 1.25,
+                        "finals": 2.0,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    }
+                },
+                "NSTPR1": {
+                    "2025010010": {
+                        "midterm": 2.5,
+                        "finals": 2.0,
+                        "average": 2.2,
+                        "grade_point": 2.2,
+                        "remarks": "Passed"
+                    }
+                }
+            }
+        }
+    },
+    "BS Agribusiness Management": {
+        "1": {
+            "A": {
+                "ITCC41": {
+                    "2025000114": {
+                        "midterm": 2.5,
+                        "finals": 2.25,
+                        "average": 2.4,
+                        "grade_point": 2.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.5,
+                        "finals": 1.25,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.25,
+                        "finals": 2.5,
+                        "average": 2.4,
+                        "grade_point": 2.4,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC43": {
+                    "2025000114": {
+                        "midterm": 1.5,
+                        "finals": 1.25,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.0,
+                        "finals": 2.75,
+                        "average": 2.4,
+                        "grade_point": 2.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.5,
+                        "finals": 1.0,
+                        "average": 1.2,
+                        "grade_point": 1.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC11": {
+                    "2025000114": {
+                        "midterm": 1.0,
+                        "finals": 2.0,
+                        "average": 1.5,
+                        "grade_point": 1.5,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.0,
+                        "finals": 2.5,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.5,
+                        "finals": 1.0,
+                        "average": 1.2,
+                        "grade_point": 1.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC14": {
+                    "2025000114": {
+                        "midterm": 2.75,
+                        "finals": 1.25,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.5,
+                        "finals": 2.5,
+                        "average": 2.5,
+                        "grade_point": 2.5,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.25,
+                        "finals": 2.75,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC15": {
+                    "2025000114": {
+                        "midterm": 1.0,
+                        "finals": 1.0,
+                        "average": 1.0,
+                        "grade_point": 1.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.25,
+                        "finals": 2.25,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.0,
+                        "finals": 1.75,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    }
+                },
+                "PE31": {
+                    "2025000114": {
+                        "midterm": 2.75,
+                        "finals": 2.0,
+                        "average": 2.4,
+                        "grade_point": 2.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.0,
+                        "finals": 1.0,
+                        "average": 1.0,
+                        "grade_point": 1.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.0,
+                        "finals": 1.75,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC41A": {
+                    "2025000114": {
+                        "midterm": 2.25,
+                        "finals": 2.0,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.5,
+                        "finals": 1.75,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.0,
+                        "finals": 1.5,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC43A": {
+                    "2025000114": {
+                        "midterm": 2.0,
+                        "finals": 1.75,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.25,
+                        "finals": 2.75,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.5,
+                        "finals": 2.0,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC18": {
+                    "2025000114": {
+                        "midterm": 2.25,
+                        "finals": 1.0,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.25,
+                        "finals": 2.5,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.0,
+                        "finals": 1.75,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    }
+                },
+                "NSTPR1": {
+                    "2025000114": {
+                        "midterm": 1.5,
+                        "finals": 2.5,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.75,
+                        "finals": 1.75,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.25,
+                        "finals": 2.75,
+                        "average": 2.5,
+                        "grade_point": 2.5,
+                        "remarks": "Passed"
+                    }
+                }
+            }
+        },
+        "2": {
+            "A": {
+                "ITCC42": {
+                    "2025000114": {
+                        "midterm": 1.5,
+                        "finals": 1.75,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.5,
+                        "finals": 2.75,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.5,
+                        "finals": 2.75,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC44": {
+                    "2025000114": {
+                        "midterm": 2.0,
+                        "finals": 2.0,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.5,
+                        "finals": 2.25,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.5,
+                        "finals": 2.25,
+                        "average": 2.4,
+                        "grade_point": 2.4,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC13": {
+                    "2025000114": {
+                        "midterm": 2.75,
+                        "finals": 1.5,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.25,
+                        "finals": 1.0,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.25,
+                        "finals": 2.75,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEE16": {
+                    "2025000114": {
+                        "midterm": 1.75,
+                        "finals": 2.0,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.5,
+                        "finals": 1.25,
+                        "average": 1.9,
+                        "grade_point": 1.9,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.5,
+                        "finals": 2.75,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    }
+                },
+                "PE32": {
+                    "2025000114": {
+                        "midterm": 1.25,
+                        "finals": 1.25,
+                        "average": 1.2,
+                        "grade_point": 1.2,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.75,
+                        "finals": 1.25,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.0,
+                        "finals": 2.0,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    }
+                },
+                "ITCC44A": {
+                    "2025000114": {
+                        "midterm": 1.5,
+                        "finals": 1.75,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 1.0,
+                        "finals": 2.0,
+                        "average": 1.5,
+                        "grade_point": 1.5,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.5,
+                        "finals": 2.75,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC12": {
+                    "2025000114": {
+                        "midterm": 1.75,
+                        "finals": 1.0,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.0,
+                        "finals": 2.0,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.75,
+                        "finals": 1.0,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC16": {
+                    "2025000114": {
+                        "midterm": 2.0,
+                        "finals": 1.25,
+                        "average": 1.6,
+                        "grade_point": 1.6,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.5,
+                        "finals": 1.0,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.25,
+                        "finals": 1.75,
+                        "average": 2.0,
+                        "grade_point": 2.0,
+                        "remarks": "Passed"
+                    }
+                },
+                "GEC19": {
+                    "2025000114": {
+                        "midterm": 1.75,
+                        "finals": 1.0,
+                        "average": 1.4,
+                        "grade_point": 1.4,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.75,
+                        "finals": 1.75,
+                        "average": 2.2,
+                        "grade_point": 2.2,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 1.75,
+                        "finals": 2.75,
+                        "average": 2.2,
+                        "grade_point": 2.2,
+                        "remarks": "Passed"
+                    }
+                },
+                "NSTPR2": {
+                    "2025000114": {
+                        "midterm": 1.25,
+                        "finals": 2.25,
+                        "average": 1.8,
+                        "grade_point": 1.8,
+                        "remarks": "Passed"
+                    },
+                    "2025000101": {
+                        "midterm": 2.75,
+                        "finals": 2.75,
+                        "average": 2.8,
+                        "grade_point": 2.8,
+                        "remarks": "Passed"
+                    },
+                    "2025000102": {
+                        "midterm": 2.75,
+                        "finals": 1.5,
+                        "average": 2.1,
+                        "grade_point": 2.1,
+                        "remarks": "Passed"
+                    }
+                }
+            }
+        }
+    }
+}
