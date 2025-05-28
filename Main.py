@@ -1,81 +1,70 @@
 #Imports
-from Programs import programs
 from Logic import *
+from Menus import *
+from Programs import *
+from SharedPreferences import *
 
-programs=programs
+choice="0"
+def setOption():
+    newChoice = input("Enter choice: ")
+    global choice 
+    choice = newChoice
 
-def paginatePrograms():
-    """Show all programs with pagination of 10 programs per page"""
-    index = 0
-    cap = 10
-
-    while True:
-        header("Choose Program")
-        end = min(index + cap, len(programs))
-        for i in range(index, end):
-            print(f"{i+1}: {programs[i]}")
-        print("\nOptions: [N]ext | [P]revious | [E]xit")
-        choice = input("Choose an option: ").strip().lower()
-
-        if choice == 'n' and end < len(programs):
-            index += cap
-        elif choice == 'p' and index - cap >= 0:
-            index -= cap
-        elif choice == 'e':
-            break
-        else:
-            print("Invalid option or no more pages.")
-
-def header(text):
-    print(f"====={text}=====")
+def getOption():
+    global choice
+    return choice
 
 
-def main():
+
+
+def Main():
     data = load_data()
+    # main()
+    # Proposed Project Logic
+
+    #shared preferneces logic here
+    isLoggedIn=get_pref("is_logged_in")
+    lastuseremail=get_pref("email")
+    lastuserpass=get_pref("password")
+
+    if isLoggedIn:
+        # print(lastuseremail)
+        loading("Signing in")
+        signIn(data,lastuseremail,lastuserpass)
+
+    
 
     while True:
-        header("CMU Enrollment System")
-        print("1. View Programs")
-        print("2. Enroll Student")
-        print("3. View Class List")
-        print("4. Exit")
-        choice = input("Select option: ")
+        header("Main Menu")
+        showMenu(MAINMENU)
+        setOption()
 
-        if choice == "1":
-            # showPrograms(data)
-            paginatePrograms()
+        #Enroll
+        if getOption() =="1":
+            Enroll(data)
+            
 
-        elif choice == "2":
-            header("Enrollment")
-            paginatePrograms()
-            program = input("Enter Program: ")
-            year = input("Enter Year: ")
-            section = input("Enter Section: ")
-            studentID = input("Enter Student ID: ")
-            fname = input("Enter First name: ")
-            lname = input("Enter Last name: ")
-            enroll(data, program, year, section, studentID, fname, lname)
+        #Sign-in
+        elif getOption() == "2":
+            header("Sign In")
+            email = input("Enter email: ").strip()
+            password = input("Enter password: ").strip()
+            signIn(data,email,password)
+            
 
-        elif choice == "3":
-            header("View Class")
-            showPrograms(data)
-            program = input("Enter Program: ")
-            year = input("Enter Year: ")
-            section = input("Enter Section: ")
-            viewclass(data, program, year, section)
+            
 
-        elif choice == "4":
-            save_data(data)
-            print("Exiting program...")
-            break
-
-        elif choice == "5":
-            #Login as Admin
-            #Complete this option
+        #Apply
+        elif getOption()=="3":
             pass
 
+        elif getOption() == "4":
+            loading("Exiting Program")
+            break
         else:
-            print("Invalid option. Try again.")
+            print("Invalid Input!")
+            continue
+
 
 if __name__ == "__main__":
-    main()
+    Main()

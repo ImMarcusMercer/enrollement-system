@@ -1,0 +1,54 @@
+{
+    "1":{
+        "ITCC41":"Computer Programming",
+        "ITCC43":"Intoduction to Computing",
+        "GEC11":"Understanding the Self",
+        "GEC14":"Mathematics in the Modern World",
+        "GEC15":"Mathematics in the Modern World",
+        "PE31":"PATH-Fit I: Movement Competency Training",
+        "ITCC41A":"Computer Programming 1, Lab",
+        "ITCC43A":"Introduction to Computing, Lab",
+        "GEC18":"Ethics",
+        "NSTPR1":"Reserved Officer Training Corps I"
+    },
+    "2":{
+        "ITCC42":"Discrete Structures",
+        "ITCC44":"Computer Programming 2",
+        "GEC13":"The Contemporary World",
+        "GEE16":"The Entrepreneurial Mind",
+        "PE32":"PATH-Fit II: Exercise-based Fitness Activities",
+        "ITCC44A":"Computer Programming 2, Lab",
+        "GEC12":"Readings in Philippine History",
+        "GEC16":"Art Appreciation",
+        "GEC19":"The Life and Works of Jose Rizal",
+        "NSTPR2":"Reserved Officer Training Corps II"
+    },
+    "3":{
+        "ITCC45":"Computer Programming 3",
+        "ITCC47":"Data Structures and Algorithms",
+        "IT51":"Computer Architecture",
+        "IT53":"Fundamentals of Networking",
+        "IT55":"Web Systems and Technologies 1",
+        "GEC17":"Science, Technology and Society",
+        "GEE11":"Environmental Science",
+        "PE33":"Physical Activities Towards Health and Fitness 3 (PATH-Fit 3)",
+        "ITCC45A":"Computer Programming 3, Lab",
+        "ITCC47A":"Data Structures and Algorithms, Lab",
+        "IT51A":"Computer Architecture, Lab",
+        "IT53A":"Fundamentals of Networking, Lab",
+        "IT55A":"Web Systems and Technologies 1, Lab"
+    },
+    "4":{
+        "ITCC48":"Application Development and Emerging Technologies",
+        "IT52":"Operating Systems",
+        "IT54":"Routing and Switching",
+        "IT 56":"Web Systems and Technology 2",
+        "STAT22":"Elementary Statistics and Probability",
+        "GEE 15":"Gender and Society",
+        "PE34":"Physical Activities Towards Health and Fitness 4 (PATH-Fit 4)",
+        "ITCC48A":"Application Development and Emerging Technologies, Lab",
+        "IT52A":"Operating System, Lab",
+        "IT 56A":"Web Systems and Technologies 2, Lab",
+        "IT54A":"Routing and Switching, Lab"
+    }
+}

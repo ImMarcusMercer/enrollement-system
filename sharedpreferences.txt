@@ -1,0 +1,1 @@
+#Used for storing currently signed in user and keeping them signed in unless logged out
