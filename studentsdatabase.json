@@ -3,21 +3,32 @@
     "1": {
       "A": [
         {
-          "studentID": 2025010010,
-          "details": {
-            "email": "s.calunod.aljen@cmu.edu.ph",
-            "password": "password123",
-            "firstname": "Aljen",
-            "lastname": "Calunod"
-          }
-        },
-        {
           "studentID": 202500102,
           "details": {
             "email": "s.fabre.imee@cmu.edu.ph",
             "password": "popo",
             "firstname": "Imee",
             "lastname": "Fabre"
+          }
+        },
+        {
+          "studentID": 202500105,
+          "details": {
+            "email": "s.soriano.sofia@cmu.edu.ph",
+            "password": "1234",
+            "firstname": "Sofia",
+            "lastname": "Soriano"
+          }
+        }
+      ],
+      "B": [
+        {
+          "studentID": 2025010010,
+          "details": {
+            "email": "s.calunod.aljen@cmu.edu.ph",
+            "password": "password123",
+            "firstname": "Aljen",
+            "lastname": "Calunod"
           }
         }
       ]

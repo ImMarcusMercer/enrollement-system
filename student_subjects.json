@@ -2,29 +2,16 @@
     "BS Information Technology": {
         "1": {
             "A": {
-                "2025010010": [
-                    "ITCC41",
-                    "ITCC43",
-                    "GEC11",
-                    "GEC14",
-                    "GEC15",
-                    "PE31",
-                    "ITCC41A",
-                    "ITCC43A",
-                    "GEC18",
-                    "NSTPR1"
-                ],
                 "202500102": [
-                    "ITCC41",
-                    "ITCC43",
-                    "GEC11",
-                    "GEC14",
-                    "GEC15",
-                    "PE31",
-                    "ITCC41A",
-                    "ITCC43A",
-                    "GEC18",
-                    "NSTPR1"
+                    "GEC18"
+                ],
+                "202500105": [
+                    "GEC18"
+                ]
+            },
+            "B": {
+                "2025010010": [
+                    "GEC18"
                 ]
             }
         }
