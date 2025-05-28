@@ -1,0 +1,24 @@
+{
+    "BSCS": {
+        "1": {
+            "A": {
+                "ITCC41": {
+                    "2025000001": {
+                        "midterm": 0,
+                        "finals": 0,
+                        "average": 0,
+                        "remarks": "Not yet graded"
+                    }
+                },
+                "ITCC43": {
+                    "2025000001": {
+                        "midterm": 0,
+                        "finals": 0,
+                        "average": 0,
+                        "remarks": "Not yet graded"
+                    }
+                }
+            }
+        }
+    }
+}

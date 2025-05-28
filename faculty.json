@@ -1,0 +1,43 @@
+{
+    "faculty": [
+        {
+            "facultyID": "F001",
+            "details": {
+                "email": "f.smith.john@cmu.edu.ph",
+                "password": "password123",
+                "firstname": "John",
+                "lastname": "Smith",
+                "department": "Computer Science"
+            },
+            "assignedSubjects": {
+                "BSCS": {
+                    "1": {
+                        "A": ["ITCC41", "ITCC41A"],
+                        "B": ["ITCC41", "ITCC41A"]
+                    },
+                    "2": {
+                        "A": ["ITCC44", "ITCC44A"]
+                    }
+                }
+            }
+        },
+        {
+            "facultyID": "F002",
+            "details": {
+                "email": "f.doe.jane@cmu.edu.ph",
+                "password": "password123",
+                "firstname": "Jane",
+                "lastname": "Doe",
+                "department": "Computer Science"
+            },
+            "assignedSubjects": {
+                "BSCS": {
+                    "1": {
+                        "A": ["ITCC43", "ITCC43A"],
+                        "B": ["ITCC43", "ITCC43A"]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -5,7 +5,7 @@ def showMenu(listofMenu:list):
         print(f"[{count}] {items}")
         count +=1
 
-MAINMENU=["Enroll", "Sign-in", "Faculty (change later)","Exit Program"]
+MAINMENU=["Enroll", "Sign-in", "Faculty Login","Exit Program"]
 
 STUDENTDASHBOARD=["Show C.O.R", "Show Subjects","Account","Logout"]
 

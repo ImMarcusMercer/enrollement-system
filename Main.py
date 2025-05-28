@@ -14,9 +14,6 @@ def getOption():
     global choice
     return choice
 
-
-
-
 def Main():
     data = load_data()
     # main()
