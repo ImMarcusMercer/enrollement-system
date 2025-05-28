@@ -1,8 +1,113 @@
 {
-    "BSCS": {
+    "BS Information Technology": {
         "1": {
             "A": {
-                "2025000001": ["ITCC41", "ITCC43", "GEC11"]
+                "2025010010": [
+                    "ITCC41",
+                    "ITCC43",
+                    "GEC11",
+                    "GEC14",
+                    "GEC15",
+                    "PE31",
+                    "ITCC41A",
+                    "ITCC43A",
+                    "GEC18",
+                    "NSTPR1"
+                ],
+                "202500102": [
+                    "ITCC41",
+                    "ITCC43",
+                    "GEC11",
+                    "GEC14",
+                    "GEC15",
+                    "PE31",
+                    "ITCC41A",
+                    "ITCC43A",
+                    "GEC18",
+                    "NSTPR1"
+                ]
+            }
+        }
+    },
+    "BS Agribusiness Management": {
+        "1": {
+            "A": {
+                "2025000114": [
+                    "ITCC41",
+                    "ITCC43",
+                    "GEC11",
+                    "GEC14",
+                    "GEC15",
+                    "PE31",
+                    "ITCC41A",
+                    "ITCC43A",
+                    "GEC18",
+                    "NSTPR1"
+                ],
+                "2025000101": [
+                    "ITCC41",
+                    "ITCC43",
+                    "GEC11",
+                    "GEC14",
+                    "GEC15",
+                    "PE31",
+                    "ITCC41A",
+                    "ITCC43A",
+                    "GEC18",
+                    "NSTPR1"
+                ],
+                "2025000102": [
+                    "ITCC41",
+                    "ITCC43",
+                    "GEC11",
+                    "GEC14",
+                    "GEC15",
+                    "PE31",
+                    "ITCC41A",
+                    "ITCC43A",
+                    "GEC18",
+                    "NSTPR1"
+                ]
+            }
+        },
+        "2": {
+            "A": {
+                "2025000114": [
+                    "ITCC42",
+                    "ITCC44",
+                    "GEC13",
+                    "GEE16",
+                    "PE32",
+                    "ITCC44A",
+                    "GEC12",
+                    "GEC16",
+                    "GEC19",
+                    "NSTPR2"
+                ],
+                "2025000101": [
+                    "ITCC42",
+                    "ITCC44",
+                    "GEC13",
+                    "GEE16",
+                    "PE32",
+                    "ITCC44A",
+                    "GEC12",
+                    "GEC16",
+                    "GEC19",
+                    "NSTPR2"
+                ],
+                "2025000102": [
+                    "ITCC42",
+                    "ITCC44",
+                    "GEC13",
+                    "GEE16",
+                    "PE32",
+                    "ITCC44A",
+                    "GEC12",
+                    "GEC16",
+                    "GEC19",
+                    "NSTPR2"
+                ]
             }
         }
     }

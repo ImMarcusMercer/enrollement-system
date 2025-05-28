@@ -1,8 +1,8 @@
 {
-    "is_logged_in": true,
-    "email": "f.smith.john@cmu.edu.ph",
-    "password": "password123",
-    "currentIDNumber": 202500102,
+    "is_logged_in": false,
+    "email": "",
+    "password": "",
+    "currentIDNumber": 202500104,
     "enrollee": "",
     "enrolleeStatus": ""
 }

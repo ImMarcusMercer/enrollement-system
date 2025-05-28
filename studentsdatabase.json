@@ -3,7 +3,7 @@
     "1": {
       "A": [
         {
-          "studentID": "2025010010",
+          "studentID": 2025010010,
           "details": {
             "email": "s.calunod.aljen@cmu.edu.ph",
             "password": "password123",
@@ -23,8 +23,7 @@
       ]
     }
   },
-  "BS Agribusiness Management": 
-  {
+  "BS Agribusiness Management": {
     "1": {
       "A": [
         {
@@ -87,6 +86,20 @@
         }
       ]
     }
-
+  },
+  "BS Business Administration": {
+    "1": {
+      "A": [
+        {
+          "studentID": 202500104,
+          "details": {
+            "email": "s.abejaron.charles@cmu.edu.ph",
+            "password": "123",
+            "firstname": "Charles",
+            "lastname": "Abejaron"
+          }
+        }
+      ]
+    }
   }
 }

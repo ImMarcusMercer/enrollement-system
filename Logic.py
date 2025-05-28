@@ -311,7 +311,7 @@ def Enroll(data: list):
                 continue
             while True:
                 print(f"\nDetails:\nID: {id}\nEmail: {email}\nFull Name: {fname} {lname}")
-                print(f"Enrolling to: {chosenProgram} {year}A")
+                print(f"Enrolling to: {programs[chosenProgram]} {year}A")
                 enrollChoice = input("Confirm enrollment [Y/N]: ").strip().lower()
                 if enrollChoice == "y":
                     # def enroll(data: list, program, year, section, studentID,email,password, fname, lname):
@@ -562,10 +562,11 @@ def showFacultyDashboard(user_data):
         print("2. View Students in Class")
         print("3. Manage Grades")
         print("4. Assign Subjects to Students")
-        print("5. Logout")
+        print("5. Assign Sections to Students")
+        print("6. Logout")
 
         dash_choice = input("Select an option: ")
-        if dash_choice == "5":
+        if dash_choice == "6":
             set_pref("is_logged_in", False)
             set_pref("email", "")
             set_pref("password", "")
@@ -579,6 +580,8 @@ def showFacultyDashboard(user_data):
             manageGrades(user_data)
         elif dash_choice == "4":
             assignSubjectsToStudents(user_data)
+        elif dash_choice == "5":
+            assignSectionsToStudents(user_data)
         else:
             print("Invalid choice. Try again.")
 
@@ -804,12 +807,210 @@ def viewStudentsInClass(faculty_data):
     
     input("\nPress Enter to continue...")
 
-def manageGrades(faculty_data):
-    header("Manage Grades")
+def assignSectionsToStudents(faculty_data):
+    header("Assign Sections to Students")
     assigned = faculty_data["assignedSubjects"]
     
     if not assigned:
-        print("No classes assigned.")
+        print("No classes assigned to you.")
+        return
+    
+    # List all classes where faculty teaches
+    print("Select a class:")
+    classes = []
+    for program in assigned:
+        for year in assigned[program]:
+            for section in assigned[program][year]:
+                class_info = {"program": program, "year": year, "section": section}
+                classes.append(class_info)
+    
+    # Remove duplicates (faculty might teach multiple subjects in same class)
+    unique_classes = []
+    for c in classes:
+        if c not in unique_classes:
+            unique_classes.append(c)
+    
+    for i, class_info in enumerate(unique_classes):
+        print(f"{i+1}. {class_info['program']} {class_info['year']}{class_info['section']}")
+    
+    try:
+        choice = int(input("Enter class number (0 to cancel): "))
+        if choice == 0:
+            return
+        
+        selected_class = unique_classes[choice-1]
+        program = selected_class['program']
+        year = selected_class['year']
+        section = selected_class['section']
+        
+        # Load student data
+        student_data = load_data()
+        
+        if (program in student_data and 
+            year in student_data[program] and 
+            section in student_data[program][year]):
+            
+            # Display students in the class
+            print(f"\nStudents in {program} {year}{section}:")
+            students = student_data[program][year][section]
+            
+            for i, student in enumerate(students):
+                details = student["details"]
+                print(f"{i+1}. ID: {student['studentID']} | Name: {details['firstname']} {details['lastname']}")
+            
+            # Choose students to reassign
+            print("\nEnter student numbers to reassign to a different section (comma-separated, e.g., 1,3,5)")
+            student_choices = input("> ").strip()
+            
+            try:
+                # Parse comma-separated numbers
+                selected_indices = [int(idx.strip()) - 1 for idx in student_choices.split(',')]
+                
+                # Validate indices
+                valid_indices = [idx for idx in selected_indices if 0 <= idx < len(students)]
+                
+                if not valid_indices:
+                    print("No valid student selections.")
+                    input("\nPress Enter to continue...")
+                    return
+                
+                # Get available sections for this program and year
+                available_sections = []
+                if program in student_data and year in student_data[program]:
+                    available_sections = list(student_data[program][year].keys())
+                
+                if not available_sections:
+                    print(f"No sections found for {program} {year}.")
+                    input("\nPress Enter to continue...")
+                    return
+                
+                # Display available sections
+                print(f"\nAvailable sections for {program} {year}:")
+                for i, sec in enumerate(available_sections):
+                    print(f"{i+1}. Section {sec}")
+                
+                # Select target section
+                target_section_idx = int(input("\nSelect target section (0 to cancel): "))
+                if target_section_idx == 0:
+                    return
+                
+                target_section = available_sections[target_section_idx-1]
+                
+                # Confirm if target section is different from current section
+                if target_section == section:
+                    print("Cannot reassign to the same section.")
+                    input("\nPress Enter to continue...")
+                    return
+                
+                # Move selected students to the target section
+                students_moved = []
+                for idx in valid_indices:
+                    student = students[idx]
+                    student_id = student['studentID']
+                    student_name = f"{student['details']['firstname']} {student['details']['lastname']}"
+                    
+                    # Add student to target section
+                    if student not in student_data[program][year][target_section]:
+                        student_data[program][year][target_section].append(student)
+                        students_moved.append(f"ID: {student_id} | Name: {student_name}")
+                
+                # Remove moved students from original section
+                for idx in sorted(valid_indices, reverse=True):
+                    del student_data[program][year][section][idx]
+                
+                # Save updated student data
+                save_data(student_data)
+                
+                # Display results
+                print(f"\nSuccessfully moved {len(students_moved)} student(s) from Section {section} to Section {target_section}:")
+                for student_info in students_moved:
+                    print(f"- {student_info}")
+                
+                # Update student_subjects.json if it exists
+                try:
+                    with open('student_subjects.json', 'r') as f:
+                        student_subjects = json.load(f)
+                    
+                    # Move subject assignments for transferred students
+                    if (program in student_subjects and 
+                        year in student_subjects[program] and 
+                        section in student_subjects[program][year]):
+                        
+                        # Initialize target section if needed
+                        if target_section not in student_subjects[program][year]:
+                            student_subjects[program][year][target_section] = {}
+                        
+                        # Move each student's subject assignments
+                        for student_info in students_moved:
+                            student_id = student_info.split("|")[0].strip().replace("ID: ", "")
+                            
+                            if student_id in student_subjects[program][year][section]:
+                                # Copy assignments to new section
+                                student_subjects[program][year][target_section][student_id] = \
+                                    student_subjects[program][year][section][student_id]
+                                
+                                # Remove from old section
+                                del student_subjects[program][year][section][student_id]
+                        
+                        # Save updated student subjects data
+                        with open('student_subjects.json', 'w') as f:
+                            json.dump(student_subjects, f, indent=4)
+                except FileNotFoundError:
+                    pass
+                
+                # Update grades.json if it exists
+                try:
+                    with open('grades.json', 'r') as f:
+                        grades_data = json.load(f)
+                    
+                    # Move grade records for transferred students
+                    if (program in grades_data and 
+                        year in grades_data[program] and 
+                        section in grades_data[program][year]):
+                        
+                        # Initialize target section if needed
+                        if target_section not in grades_data[program][year]:
+                            grades_data[program][year][target_section] = {}
+                        
+                        # For each subject in the original section
+                        for subject_code in grades_data[program][year][section]:
+                            # Initialize subject in target section if needed
+                            if subject_code not in grades_data[program][year][target_section]:
+                                grades_data[program][year][target_section][subject_code] = {}
+                            
+                            # Move each student's grades
+                            for student_info in students_moved:
+                                student_id = student_info.split("|")[0].strip().replace("ID: ", "")
+                                
+                                if student_id in grades_data[program][year][section][subject_code]:
+                                    # Copy grades to new section
+                                    grades_data[program][year][target_section][subject_code][student_id] = \
+                                        grades_data[program][year][section][subject_code][student_id]
+                                    
+                                    # Remove from old section
+                                    del grades_data[program][year][section][subject_code][student_id]
+                        
+                        # Save updated grades data
+                        with open('grades.json', 'w') as f:
+                            json.dump(grades_data, f, indent=4)
+                except FileNotFoundError:
+                    pass
+                
+            except ValueError:
+                print("Invalid input format. Please use comma-separated numbers.")
+        else:
+            print("No students found in this class.")
+    except (ValueError, IndexError):
+        print("Invalid selection.")
+    
+    input("\nPress Enter to continue...")
+
+def manageGrades(faculty_data):
+    header("Manage Student Grades")
+    assigned = faculty_data["assignedSubjects"]
+    
+    if not assigned:
+        print("No classes assigned to you.")
         return
     
     # List all classes where faculty teaches
@@ -899,15 +1100,24 @@ def manageGrades(faculty_data):
                             print(f"\nUpdating grades for {student['details']['firstname']} {student['details']['lastname']}")
                             
                             try:
-                                midterm = float(input("Enter midterm grade (0-100): "))
-                                finals = float(input("Enter finals grade (0-100): "))
+                                print("\nEnter grades using the 1.0-5.0 scale:")
+                                print("1.0-3.0 (1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0) = Pass")
+                                print("4.0 = INC, 5.0 and others = Failed")
+                                midterm = float(input("Enter midterm grade (1.0-5.0): "))
+                                finals = float(input("Enter finals grade (1.0-5.0): "))
                                 
-                                if 0 <= midterm <= 100 and 0 <= finals <= 100:
+                                if 1.0 <= midterm <= 5.0 and 1.0 <= finals <= 5.0:
+                                    # Calculate average of the grade points
                                     average = (midterm + finals) / 2
-                                    
-                                    # Determine remarks
-                                    if average >= 75:
+                                    grade_point = round(average, 1)  # Round to 1 decimal place
+                                    remarks="Not yet graded"
+                                    # Determine remarks based on the new grading system
+                                    # Passing grades: 1.0, 1.25, 1.50, 1.75, 2.0, 2.25, 2.50, 2.75, 3.0
+                                    passing_grades = [1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0]
+                                    if 1.0 <= grade_point <= 3.0:
                                         remarks = "Passed"
+                                    elif 5> grade_point >= 4.0:
+                                        remarks = "Removal"
                                     else:
                                         remarks = "Failed"
                                     
@@ -915,7 +1125,8 @@ def manageGrades(faculty_data):
                                     grades_data[program][year][section][subject][student_id] = {
                                         "midterm": midterm,
                                         "finals": finals,
-                                        "average": round(average, 2),
+                                        "average": round(average, 1),  # Round to 1 decimal place
+                                        "grade_point": grade_point,
                                         "remarks": remarks
                                     }
                                     
@@ -925,7 +1136,7 @@ def manageGrades(faculty_data):
                                     
                                     print("Grades updated successfully.")
                                 else:
-                                    print("Invalid grade range. Grades must be between 0 and 100.")
+                                    print("Invalid grade range. Grades must be between 1.0 and 5.0.")
                             except ValueError:
                                 print("Invalid input. Please enter numeric grades.")
                         else:
@@ -993,7 +1204,7 @@ def showCOR(data:dict):
     
     # Add note about subject assignment
     if not has_individual_subjects:
-        print("\nNote: No individually assigned subjects. Contact your faculty advisor for subject enrollment.")
+        print("\nNote: Forgery of grades is a violation of the University's Code of Conduct.")
     else:
         # Check for grades
         try:
@@ -1024,13 +1235,127 @@ def showCOR(data:dict):
             print("No grades recorded yet.")
 
 
+def showStudentGrades(data:dict):
+    header("Student Grades")
+    
+    program = data['program']
+    year = data['year']
+    section = data['section']
+    student_id = str(data['studentID'])
+    
+    # First, try to get subjects from student_subjects.json
+    try:
+        with open('student_subjects.json', 'r') as f:
+            student_subjects = json.load(f)
+            
+        if (program in student_subjects and 
+            year in student_subjects[program] and 
+            section in student_subjects[program][year] and 
+            student_id in student_subjects[program][year][section]):
+            
+            assigned_subjects = student_subjects[program][year][section][student_id]
+            has_assigned_subjects = True
+        else:
+            has_assigned_subjects = False
+    except FileNotFoundError:
+        has_assigned_subjects = False
+    
+    # If no individually assigned subjects, get all subjects for the year
+    if not has_assigned_subjects:
+        try:
+            with open('subjects.json', 'r') as f:
+                subjects_data = json.load(f)
+            
+            if year in subjects_data:
+                assigned_subjects = list(subjects_data[year].keys())
+            else:
+                assigned_subjects = []
+        except FileNotFoundError:
+            assigned_subjects = []
+    
+    # Load grades data
+    try:
+        with open('grades.json', 'r') as f:
+            grades_data = json.load(f)
+        
+        has_grades = False
+        print(f"\nGrades for {data['firstname']} {data['lastname']} (ID: {student_id}):\n")
+        print("-" * 90)
+        print(f"{'Subject':<10} | {'Description':<30} | {'Midterm':<7} | {'Finals':<7} | {'Average':<7} | {'Remarks':<10}")
+        print("-" * 90)
+        
+        # Try to load subject descriptions
+        try:
+            with open('subjects.json', 'r') as f:
+                subjects_data = json.load(f)
+        except FileNotFoundError:
+            subjects_data = {}
+        
+        for subject_code in assigned_subjects:
+            # Get subject description
+            description = ""
+            if year in subjects_data and subject_code in subjects_data[year]:
+                description = subjects_data[year][subject_code]
+            
+            # Check if grade exists
+            if (program in grades_data and 
+                year in grades_data[program] and 
+                section in grades_data[program][year] and 
+                subject_code in grades_data[program][year][section] and 
+                student_id in grades_data[program][year][section][subject_code]):
+                
+                grade_info = grades_data[program][year][section][subject_code][student_id]
+                midterm = grade_info.get('midterm', 0)
+                finals = grade_info.get('finals', 0)
+                average = grade_info.get('average', 0)
+                remarks = grade_info.get('remarks', 'Not yet graded')
+                
+                print(f"{subject_code:<10} | {description[:30]:<30} | {midterm:<7} | {finals:<7} | {average:<7} | {remarks:<10}")
+                has_grades = True
+            else:
+                print(f"{subject_code:<10} | {description[:30]:<30} | {'-':<7} | {'-':<7} | {'-':<7} | {'Not graded':<10}")
+        
+        print("-" * 90)
+        
+        # Show summary of passed/failed subjects
+        if has_grades:
+            passed_count = 0
+            failed_count = 0
+            inc_count = 0
+            not_graded_count = 0
+            
+            for subject_code in assigned_subjects:
+                if (program in grades_data and 
+                    year in grades_data[program] and 
+                    section in grades_data[program][year] and 
+                    subject_code in grades_data[program][year][section] and 
+                    student_id in grades_data[program][year][section][subject_code]):
+                    
+                    remarks = grades_data[program][year][section][subject_code][student_id].get('remarks', 'Not yet graded')
+                    if remarks == 'Passed':
+                        passed_count += 1
+                    elif remarks == 'Failed':
+                        failed_count += 1
+                    elif remarks == 'Removal':
+                        inc_count += 1
+                    else:
+                        not_graded_count += 1
+            
+            print(f"\nSummary: {passed_count} Passed, {failed_count} Failed, {inc_count} Removal, {not_graded_count} Not Graded")
+        else:
+            print("\nNo grades have been recorded for your subjects yet.")
+    except FileNotFoundError:
+        print("\nNo grades have been recorded in the system yet.")
+    
+    input("\nPress Enter to continue...")
+
 def showStudentDashboard(data:dict):
     while True:
         header("Student Dashboard")
-        print("1. Show C.O.R.\n2. Show Subjects\n3. Logout")
+        print("1. Show C.O.R.\n2. Show Subjects\n3. Show Grades\n4. Logout")
 
         dash_choice = input("Select an option: ")
-        if dash_choice == "3":
+        if dash_choice == "4":
             set_pref("is_logged_in", False)
             set_pref("email", "")
             set_pref("password", "")
@@ -1041,5 +1366,12 @@ def showStudentDashboard(data:dict):
             showCOR(data)
         elif dash_choice == "2":
             getSubjects(data["year"])
+        elif dash_choice == "3":
+            # Show student grades
+            showStudentGrades(data)
+        elif dash_choice == "4":
+            # Account option - placeholder for now
+            print("\nAccount management features coming soon!")
+            input("\nPress Enter to continue...")
         else:
             print("Invalid choice. Try again.")
